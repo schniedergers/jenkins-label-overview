@@ -1,0 +1,28 @@
+<j:jelly xmlns:j="jelly:core" xmlns:l="/lib/layout">
+    <l:layout title="${it.DisplayName}" norefresh="true" permission="${it.requiredPermission}">
+        <l:main-panel>
+            <h3>${it.displayName}</h3>
+            <div class="help" style="display: block; width:300px">
+                <div>
+                    This plugin displays an overview of labels used in nodes and jobs.
+                    <br/>
+                </div></div>
+
+            <noscript>
+                <b><font color="RED">
+                    Note: You need to activate Javascript in order for this plugin to work properly!
+                </font></b>
+            </noscript>
+                        
+            <table id="slaves" class="sortable pane bigtable">
+                <tr align="left">
+                    <th initialSortDir="down">${%Label}</th>
+                    <th>${%Nodes}</th>
+                    <th>${%Projects}</th>
+                </tr>
+                ${it.labelMap}
+            </table>
+                
+        </l:main-panel>
+    </l:layout>
+</j:jelly>
